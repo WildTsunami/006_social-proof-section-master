@@ -2,14 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
 
 // Colors variables
-$title: white;
 
-// Mixins
-@mixin flex-center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+$primary_color1: hsl(300, 43%, 22%);
+$primary_color2: hsl(300, 24%, 96%);
+$secondary_color1: hsl(303, 10%, 53%);
+$secondary_color2: hsl(333, 80%, 67%);
 
 // Base code
 *{
@@ -20,19 +17,186 @@ $title: white;
 
 html{
     font-size: 100%;
+    font-family: "Spartan", sans-serif, serif;
 }
 
 body{
     min-height: 100vh;
     
-    background-image: url(../images/bg-pattern-top-desktop.svg), url(../images/bg-pattern-bottom-desktop.svg);
+    border: 0px transparent solid;
+    background-image: url(../images/bg-pattern-top-mobile.svg), url(../images/bg-pattern-bottom-mobile.svg);
     background-repeat: no-repeat;
     background-position: top left, bottom right;
 }
 
 // Main part
 main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 85%;
-    margin: 5% auto;
+    margin: 10% auto;
 }
 
+.top_part{
+    margin-bottom: 30px;
+}
+
+.text_bloc{
+
+    h1{
+        margin-bottom: 25px;
+
+        line-height: 35px;
+        text-align: center;
+        font-size: 2.3rem;
+        color: $primary_color1;
+    }
+    p{  
+        margin-bottom: 35px;
+
+        line-height: 20px;
+        text-align: center;
+        font-weight: 500;
+        font-size: 0.9rem;
+        color: $secondary_color1;
+    }
+}
+
+.reviews_items{
+    padding: 15px 0px;
+    margin-bottom: 15px;
+
+    text-align: center; 
+    background-color: $primary_color2;
+    border-radius: 5px;
+
+    dd{
+        margin-bottom: 10px;
+
+        img{
+            margin-right: 5px;
+        }
+    }
+
+    dt{
+        color: $primary_color1;
+        font-weight: 700;
+        font-size: 0.85rem;
+    }
+}
+
+.bottom_part{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    margin-bottom: 10px;
+}
+
+.card{
+    padding: 35px;
+
+    font-size: 0.85rem;
+    background-color: $primary_color1;
+    border-radius: 8px;
+    p{
+
+        color:white;
+        font-size: 0.8rem;
+        line-height: 20px;
+    }
+}
+    
+.profile{
+    display: flex;
+    gap: 20px;
+
+    margin: 0px 20px 20px 0px;
+
+    img{
+        width: 50px;
+        
+        border-radius: 90px;
+    }
+    .block_name{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .customer_name{
+            color: white;
+            font-weight: 700;
+        }
+        .customer_status{
+            color: $secondary_color2;
+        }
+    }
+}
+
+@media screen and (min-width: 768px){
+    body{
+        padding-top: 10%;
+        
+        background-image: url(../images/bg-pattern-top-desktop.svg), url(../images/bg-pattern-bottom-desktop.svg);    
+    }
+
+    main{
+        width: 80%;
+        margin: 0px auto;
+    }
+
+    .top_part{
+        display: flex;        
+        
+        .text_bloc{
+            width: 35%;
+        
+            h1{
+                margin-bottom: 10px;
+
+                line-height: 35px;
+                text-align: left;
+            }
+            p{
+                text-align: left;
+                font-size: 0.8rem;
+            }
+        }
+        .reviews{
+            
+            width: 65%;
+            
+            .reviews_items{
+                display: flex;
+
+                width: 58%;
+
+                dd{
+                    margin: 0px 25px 0px 20px;
+                }
+            }
+            .item1{
+                margin-left: 28%;    
+            }
+            .item2{
+                margin-left: 36%;
+            }
+            .item3{
+                margin-left: 42%;
+            }
+        }
+    }
+
+    .bottom_part{
+        flex-direction: row;
+        align-items: flex-start;
+
+        .card2{
+            margin-top: 2.5%;    
+        }
+        .card3{
+            margin-top: 5%;
+        }
+    }
+}
