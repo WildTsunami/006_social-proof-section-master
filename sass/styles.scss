@@ -1,0 +1,38 @@
+// "Spartan" 400, 500, 700
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
+
+// Colors variables
+$title: white;
+
+// Mixins
+@mixin flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Base code
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+html{
+    font-size: 100%;
+}
+
+body{
+    min-height: 100vh;
+    
+    background-image: url(../images/bg-pattern-top-desktop.svg), url(../images/bg-pattern-bottom-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: top left, bottom right;
+}
+
+// Main part
+main{
+    width: 85%;
+    margin: 5% auto;
+}
+
